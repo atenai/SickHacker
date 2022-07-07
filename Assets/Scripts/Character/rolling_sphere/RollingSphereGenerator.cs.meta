@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 78e63a252b6a2ee4ca9881d47ecf68e6
+timeCreated: 1529975932
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - RollingSpherePrefab: {fileID: 1517735484468320, guid: 6309358e8fa64e94a98f961b932d2198,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
