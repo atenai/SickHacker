@@ -65,7 +65,7 @@ public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
             if (Input.GetKeyDown("return"))//もしエンターキーを押したら下の内容を実行
             {
                 this.Selectaud.PlayOneShot(this.SelectSE);
-                Fade.instance.FadeOut("Stage2");//gameシーンに飛ぶ
+                Fade.instance.FadeOut("Stage3");//gameシーンに飛ぶ
             }
         }
         else if (kazu == 4)
