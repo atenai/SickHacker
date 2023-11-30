@@ -7,25 +7,20 @@ using UnityEngine.UI;
 public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
 {
 
-    public Image stage1;
-    public Image stage2;
-    public Image stage3;
+    [SerializeField] Image stage1;
+    [SerializeField] Image stage2;
+    [SerializeField] Image stage3;
     int kazu = 1;
 
-    public AudioClip SelectSE;
-    AudioSource Selectaud;
+    [SerializeField] AudioSource Selectaud;
+    [SerializeField] AudioClip SelectSE;
 
-    // Use this for initialization
-    void Start ()
+    void Start()
     {
-        this.Selectaud = GetComponent<AudioSource>();
-        stage1 = GameObject.Find("Image(maru)").GetComponent<Image>();//上で作ったImage型のstage1にImage(maru)を見つけてImageクラスの機能を入れる
-        stage2 = GameObject.Find("Image(sikaku)").GetComponent<Image>();//上で作ったImage型のstage2にImage(sikaku)を見つけてImageクラスの機能を入れる
-        stage3 = GameObject.Find("Image(game)").GetComponent<Image>();//上で作ったImage型のstage3にImage(game)を見つけてImageクラスの機能を入れる
+
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))//もし左矢印キーを押したら下の内容を実行
         {
@@ -46,8 +41,7 @@ public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
             if (Input.GetKeyDown("return"))//もしエンターキーを押したら下の内容を実行
             {
                 this.Selectaud.PlayOneShot(this.SelectSE);
-
-                ChangeStage1Select();//ステージ1シーンに飛ぶ
+                Fade.instance.FadeOut("Stage1");//ステージ1シーンに飛ぶ
             }
         }
         else if (kazu == 2)//ステージ2を選択中
@@ -59,8 +53,7 @@ public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
             if (Input.GetKeyDown("return"))//もしエンターキーを押したら下の内容を実行
             {
                 this.Selectaud.PlayOneShot(this.SelectSE);
-                ChangeStage2Select();//ステージ2シーンに飛ぶ
-                //SceneManager.LoadScene("stage2");//ステージ2シーンに飛ぶ
+                Fade.instance.FadeOut("Stage2");//ステージ2シーンに飛ぶ
             }
         }
         else if (kazu == 3)//ステージ3を選択中
@@ -72,8 +65,7 @@ public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
             if (Input.GetKeyDown("return"))//もしエンターキーを押したら下の内容を実行
             {
                 this.Selectaud.PlayOneShot(this.SelectSE);
-                ChangeStage3Select();//ステージ3シーンに飛ぶ
-                //SceneManager.LoadScene("stage3");//ステージ3シーンに飛ぶ
+                Fade.instance.FadeOut("Stage2");//gameシーンに飛ぶ
             }
         }
         else if (kazu == 4)
@@ -84,20 +76,5 @@ public class StageSelectScene : MonoBehaviour//スクリプト名と合わせる
         {
             kazu = 3;
         }
-    }
-
-    public void ChangeStage1Select()//関数定義(この関数を使う)
-    {
-        Fade.instance.FadeOut("stage1");//ステージ1シーンに飛ぶ
-    }
-
-    public void ChangeStage2Select()//関数定義(この関数を使う)
-    {
-        Fade.instance.FadeOut("stage2");//ステージ2シーンに飛ぶ
-    }
-
-    public void ChangeStage3Select()//関数定義(この関数を使う)
-    {
-        Fade.instance.FadeOut("game");//gameシーンに飛ぶ
     }
 }
