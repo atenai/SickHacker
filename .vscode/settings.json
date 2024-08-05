@@ -53,5 +53,5 @@
         "Temp/": true
     },
     "dotnet.preferCSharpExtension": true,
-    "dotnet.defaultSolution": "SickHacker_GitHub.sln"
+    "dotnet.defaultSolution": "SickHacker_Git.sln"
 }
